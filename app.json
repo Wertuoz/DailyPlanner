@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "DailyPlanner",
+    "slug": "DailyPlanner",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
