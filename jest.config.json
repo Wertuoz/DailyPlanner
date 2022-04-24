@@ -1,0 +1,41 @@
+{
+  "preset": "jest-expo",
+  "setupFilesAfterEnv": [
+    "./node_modules/jest-enzyme/lib/index.js",
+    "<rootDir>/jest/__mocks__/globalMock.ts"
+  ],
+  "setupFiles": [
+    "react-native/jest/setup.js",
+    "<rootDir>/jest/setup.tsx",
+    "enzyme-react-16-adapter-setup"
+  ],
+  "testMatch": [
+    "**/__tests__/**/*.(test).(js|ts|tsx)",
+    "**/?(*.)+(test).(js|ts|tsx)"
+  ],
+  "transformIgnorePatterns": [
+    "node_modules/(?!react-native|native-base-shoutem-theme|native-base|@shoutem/animation|@shoutem/ui|tcomb-form-native|@sentry/react-native|expo-*|@unimodules/.*|react-navigation|@react-navigation/.*|@react-native-community|@expo|@unimodules/.*|unimodules|@unimodules|@react-native-community/.*)"
+  ],
+  "transform": {
+    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+    "^.+\\.(ts|tsx)$": "babel-jest"
+  },
+  "testPathIgnorePatterns": ["/node_modules/", "/_deprecated/"],
+  "moduleFileExtensions": ["js", "json", "jsx", "node", "ts", "tsx"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**"
+  ],
+  "coverageReporters": ["json-summary", "text", "lcov"],
+  "coveragePathIgnorePatterns": ["/node_modules/", "/_deprecated/"],
+  "globals": {
+    "ts-jest": {
+      "tsConfig": {
+        "jsx": "react"
+      }
+    }
+  }
+}
